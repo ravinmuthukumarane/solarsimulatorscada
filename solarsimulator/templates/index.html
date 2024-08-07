@@ -1,15 +1,26 @@
-<!DOCTYPE html>
+{% load form_tags %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inverter Management</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script>
-        function sendMQTT(inverterId) {
-            fetch(`/send/${inverterId}/`)
+        function loadInverterData() {
+            const inverterId = document.getElementById("inverter-select").value;
+            fetch(`/load_inverter/${inverterId}/`)
                 .then(response => response.json())
                 .then(data => {
-                    console.log("MQTT message sent", data);
+                    if (data.status === 'success') {
+                        for (const key in data.inverter) {
+                            const input = document.querySelector(`[name="${key}"]`);
+                            if (input) {
+                                input.value = data.inverter[key];
+                            }
+                        }
+                    } else {
+                        alert(data.message);
+                    }
                 });
         }
 
@@ -29,25 +40,62 @@
             });
         }
     </script>
+    <style>
+        body {
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-control {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>Inverter Management</h1>
+    <div class="container">
+        <h1 class="my-4">Inverter Management</h1>
 
-    <h2>Add New Inverter</h2>
-    <form method="post" action="" onsubmit="submitForm(event)">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Set</button>
-    </form>
+        <h2>Select Inverter</h2>
+        <div class="form-group">
+            <select id="inverter-select" class="form-control" onchange="loadInverterData()">
+                <option value="">Select an inverter</option>
+                {% for inverter in inverters %}
+                    <option value="{{ inverter.name }}">{{ inverter.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
 
-    <h2>Inverter List</h2>
-    <div id="inverter-list">
-        {% for inverter in inverters %}
-            <div>
-                <p>{{ inverter.name }}</p>
-                <button onclick="sendMQTT({{ inverter.id }})">Send MQTT</button>
+        <h2>Edit Inverter Data</h2>
+        <form method="post" action="" onsubmit="submitForm(event)">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+                        {{ form.name|add_class:"form-control" }}
+                    </div>
+                </div>
             </div>
-        {% endfor %}
+            <div class="row">
+                {% for field in form %}
+                    {% if field.name != 'name' %}
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                {{ field|add_class:"form-control" }}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-primary">Set</button>
+        </form>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

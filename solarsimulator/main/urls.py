@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.inverter_home, name='inverter_home'),
-    path('send/<int:inverter_id>/', views.send_mqtt_message, name='send_mqtt_message'),
+    path('', views.index, name='index'),
+    path('load_inverter/<str:inverter_id>/', views.load_inverter, name='load_inverter'),
+    path('create_json/', views.create_json, name='create_json'),
+    path('send_mqtt/<str:inverter_id>/', views.send_mqtt, name='send_mqtt'),
 ]
