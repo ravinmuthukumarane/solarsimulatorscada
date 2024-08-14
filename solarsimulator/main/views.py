@@ -661,4 +661,4 @@ def load_inverter(request, inverter_id):
     return JsonResponse({'status': 'error', 'message': 'Inverter not found'}, status=404)
 
 # Start the periodic task when the server starts
-start_periodic_task()
+# start_periodic_task()
