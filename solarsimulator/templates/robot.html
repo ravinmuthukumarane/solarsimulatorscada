@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Configurations</title>
+</head>
+<body>
+    <h1>Configure Robots</h1>
+    <form id="robot-form" method="post">
+        {% csrf_token %}
+
+        <!-- Robot 1 -->
+        <h2>Robot 1</h2>
+        <label for="connection_1">Connection:</label>
+        <select name="connection_1" id="connection_1">
+            <option value="Online">Online</option>
+            <option value="Offline">Offline</option>
+        </select>
+        <br>
+        <label for="status_1">Status:</label>
+        <select name="status_1" id="status_1">
+            <option value="Work">Work</option>
+            <option value="Fault">Fault</option>
+        </select>
+        <br>
+        <label for="cleaning_status_1">Cleaning Status:</label>
+        <select name="cleaning_status_1" id="cleaning_status_1">
+            <option value="Cleaning">Cleaning</option>
+            <option value="Not Cleaning">Not Cleaning</option>
+        </select>
+        <br><br>
+
+        <!-- Robot 2 -->
+        <h2>Robot 2</h2>
+        <label for="connection_2">Connection:</label>
+        <select name="connection_2" id="connection_2">
+            <option value="Online">Online</option>
+            <option value="Offline">Offline</option>
+        </select>
+        <br>
+        <label for="status_2">Status:</label>
+        <select name="status_2" id="status_2">
+            <option value="Work">Work</option>
+            <option value="Fault">Fault</option>
+        </select>
+        <br>
+        <label for="cleaning_status_2">Cleaning Status:</label>
+        <select name="cleaning_status_2" id="cleaning_status_2">
+            <option value="Cleaning">Cleaning</option>
+            <option value="Not Cleaning">Not Cleaning</option>
+        </select>
+        <br><br>
+        <h2>Robot 3</h2>
+        <label for="connection_3">Connection:</label>
+        <select name="connection_3" id="connection_3">
+            <option value="Online">Online</option>
+            <option value="Offline">Offline</option>
+        </select>
+        <br>
+        <label for="status_3">Status:</label>
+        <select name="status_3" id="status_3">
+            <option value="Work">Work</option>
+            <option value="Fault">Fault</option>
+        </select>
+        <br>
+        <label for="cleaning_status_3">Cleaning Status:</label>
+        <select name="cleaning_status_3" id="cleaning_status_3">
+            <option value="Cleaning">Cleaning</option>
+            <option value="Not Cleaning">Not Cleaning</option>
+        </select>
+        <br><br>
+        <h2>Robot 4</h2>
+        <label for="connection_4">Connection:</label>
+        <select name="connection_4" id="connection_4">
+            <option value="Online">Online</option>
+            <option value="Offline">Offline</option>
+        </select>
+        <br>
+        <label for="status_4">Status:</label>
+        <select name="status_4" id="status_4">
+            <option value="Work">Work</option>
+            <option value="Fault">Fault</option>
+        </select>
+        <br>
+        <label for="cleaning_status_4">Cleaning Status:</label>
+        <select name="cleaning_status_4" id="cleaning_status_4">
+            <option value="Cleaning">Cleaning</option>
+            <option value="Not Cleaning">Not Cleaning</option>
+        </select>
+        <br><br>
+        <h2>Robot 5</h2>
+        <label for="connection_5">Connection:</label>
+        <select name="connection_5" id="connection_5">
+            <option value="Online">Online</option>
+            <option value="Offline">Offline</option>
+        </select>
+        <br>
+        <label for="status_5">Status:</label>
+        <select name="status_5" id="status_5">
+            <option value="Work">Work</option>
+            <option value="Fault">Fault</option>
+        </select>
+        <br>
+        <label for="cleaning_status_5">Cleaning Status:</label>
+        <select name="cleaning_status_5" id="cleaning_status_5">
+            <option value="Cleaning">Cleaning</option>
+            <option value="Not Cleaning">Not Cleaning</option>
+        </select>
+        <br><br>
+        <h2>Robot 6</h2>
+        <label for="connection_6">Connection:</label>
+        <select name="connection_6" id="connection_6">
+            <option value="Online">Online</option>
+            <option value="Offline">Offline</option>
+        </select>
+        <br>
+        <label for="status_6">Status:</label>
+        <select name="status_6" id="status_6">
+            <option value="Work">Work</option>
+            <option value="Fault">Fault</option>
+        </select>
+        <br>
+        <label for="cleaning_status_6">Cleaning Status:</label>
+        <select name="cleaning_status_6" id="cleaning_status_6">
+            <option value="Cleaning">Cleaning</option>
+            <option value="Not Cleaning">Not Cleaning</option>
+        </select>
+        <br><br>
+        <h2>Robot 7</h2>
+        <label for="connection_7">Connection:</label>
+        <select name="connection_7" id="connection_7">
+            <option value="Online">Online</option>
+            <option value="Offline">Offline</option>
+        </select>
+        <br>
+        <label for="status_7">Status:</label>
+        <select name="status_7" id="status_7">
+            <option value="Work">Work</option>
+            <option value="Fault">Fault</option>
+        </select>
+        <br>
+        <label for="cleaning_status_7">Cleaning Status:</label>
+        <select name="cleaning_status_7" id="cleaning_status_7">
+            <option value="Cleaning">Cleaning</option>
+            <option value="Not Cleaning">Not Cleaning</option>
+        </select>
+        <br><br>
+        <h2>Robot 8</h2>
+        <label for="connection_8">Connection:</label>
+        <select name="connection_8" id="connection_8">
+            <option value="Online">Online</option>
+            <option value="Offline">Offline</option>
+        </select>
+        <br>
+        <label for="status_8">Status:</label>
+        <select name="status_8" id="status_8">
+            <option value="Work">Work</option>
+            <option value="Fault">Fault</option>
+        </select>
+        <br>
+        <label for="cleaning_status_8">Cleaning Status:</label>
+        <select name="cleaning_status_8" id="cleaning_status_8">
+            <option value="Cleaning">Cleaning</option>
+            <option value="Not Cleaning">Not Cleaning</option>
+        </select>
+        <br><br>
+        <h2>Robot 9</h2>
+        <label for="connection_9">Connection:</label>
+        <select name="connection_9" id="connection_9">
+            <option value="Online">Online</option>
+            <option value="Offline">Offline</option>
+        </select>
+        <br>
+        <label for="status_9">Status:</label>
+        <select name="status_9" id="status_9">
+            <option value="Work">Work</option>
+            <option value="Fault">Fault</option>
+        </select>
+        <br>
+        <label for="cleaning_status_9">Cleaning Status:</label>
+        <select name="cleaning_status_9" id="cleaning_status_9">
+            <option value="Cleaning">Cleaning</option>
+            <option value="Not Cleaning">Not Cleaning</option>
+        </select>
+        <br><br>
+
+        
+        <!-- Robot 10 -->
+        <h2>Robot 10</h2>
+        <label for="connection_10">Connection:</label>
+        <select name="connection_10" id="connection_10">
+            <option value="Online">Online</option>
+            <option value="Offline">Offline</option>
+        </select>
+        <br>
+        <label for="status_10">Status:</label>
+        <select name="status_10" id="status_10">
+            <option value="Work">Work</option>
+            <option value="Fault">Fault</option>
+        </select>
+        <br>
+        <label for="cleaning_status_10">Cleaning Status:</label>
+        <select name="cleaning_status_10" id="cleaning_status_10">
+            <option value="Cleaning">Cleaning</option>
+            <option value="Not Cleaning">Not Cleaning</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Save Configurations</button>
+    </form>
+
+    <script>
+        document.getElementById('robot-form').onsubmit = function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+
+            fetch("{% url 'robot_configurations' %}", {
+                method: "POST",
+                headers: {
+                    "X-CSRFToken": formData.get("csrfmiddlewaretoken")
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => alert(data.message))
+            .catch(error => console.error('Error:', error));
+        };
+    </script>
+</body>
+</html>

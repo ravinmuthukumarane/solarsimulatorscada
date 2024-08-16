@@ -1,0 +1,62 @@
+[
+    {
+        "robot": "Robot 1",
+        "connection": "Online",
+        "status": "Work",
+        "cleaning_status": "Cleaning"
+    },
+    {
+        "robot": "Robot 2",
+        "connection": "Online",
+        "status": "Fault",
+        "cleaning_status": "Cleaning"
+    },
+    {
+        "robot": "Robot 3",
+        "connection": "Offline",
+        "status": "Work",
+        "cleaning_status": "Cleaning"
+    },
+    {
+        "robot": "Robot 4",
+        "connection": "Online",
+        "status": "Work",
+        "cleaning_status": "Cleaning"
+    },
+    {
+        "robot": "Robot 5",
+        "connection": "Online",
+        "status": "Work",
+        "cleaning_status": "Cleaning"
+    },
+    {
+        "robot": "Robot 6",
+        "connection": "Online",
+        "status": "Work",
+        "cleaning_status": "Cleaning"
+    },
+    {
+        "robot": "Robot 7",
+        "connection": "Online",
+        "status": "Work",
+        "cleaning_status": "Cleaning"
+    },
+    {
+        "robot": "Robot 8",
+        "connection": "Online",
+        "status": "Work",
+        "cleaning_status": "Cleaning"
+    },
+    {
+        "robot": "Robot 9",
+        "connection": "Online",
+        "status": "Work",
+        "cleaning_status": "Cleaning"
+    },
+    {
+        "robot": "Robot 10",
+        "connection": "Online",
+        "status": "Work",
+        "cleaning_status": "Cleaning"
+    }
+]
